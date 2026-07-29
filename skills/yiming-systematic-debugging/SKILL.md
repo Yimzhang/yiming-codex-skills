@@ -1,6 +1,6 @@
 ---
 name: yiming-systematic-debugging
-description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes. After confirming a reusable external limitation or workaround, MUST hand off to log-environment-gaps before completion.
 ---
 
 # Systematic Debugging
@@ -208,7 +208,37 @@ You MUST complete each phase before proceeding to the next.
 
    **Discuss with your human partner before attempting more fixes**
 
-   This is NOT a failed hypothesis - this is a wrong architecture.
+This is NOT a failed hypothesis - this is a wrong architecture.
+
+## Environment Gap Handoff
+
+After confirming the root cause and before completing the task, classify the result. A successful workaround does not remove this requirement.
+
+Invoke `log-environment-gaps` when any of these conditions is true:
+
+- A reusable limitation affects a package, runtime, tool, skill, connector, permission boundary, source, or platform.
+- The successful path requires switching runtimes or tools because the normal reusable path cannot work.
+- The solution bypasses a public API, uses an internal or lower-level interface, or requires a reusable compatibility shim.
+- The solution redirects cache, configuration, output, or temporary files because the normal location is blocked.
+- The same limitation could reasonably recur in another task.
+
+Do not hand off ordinary application-code defects, incorrect arguments, quoting mistakes, one-time missing inputs, clarification needs, or non-recurring transient failures.
+
+Pass this evidence to `log-environment-gaps`:
+
+- category candidate;
+- affected component and exact version when known;
+- confirmed root symptom;
+- concise execution evidence;
+- validated workaround;
+- proposed durable fix;
+- nearby ordinary implementation defects that must remain excluded.
+
+The debugging workflow may finish only after one outcome is explicit:
+
+1. Ordinary implementation defect: no environment-gap handoff is required.
+2. Qualifying reusable gap: `log-environment-gaps` completed and returned a Gap ID.
+3. Qualifying reusable gap but logging failed: disclose the recording failure to the user and do not claim that the gap was recorded.
 
 ## Red Flags - STOP and Follow Process
 
