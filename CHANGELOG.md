@@ -2,6 +2,21 @@
 
 This file records user-facing workflow changes to the published Skill collection.
 
+## 2026-08-07 — Brainstorming gate reflection update
+
+### Changed
+
+- `brainstorming-gate` now briefly reflects the intended outcome and primary deliverable before routing an independent creative request.
+- When the user has not already selected a route, the gate presents three explicit choices: direct execution, full brainstorming, or correction of the reflected understanding.
+- The gate now excludes read-only explanation, review, diagnosis, research, factual answers, translation, formatting, and status reporting from its trigger scope.
+- The gate may state at most one material uncertainty and must not research, inspect extra sources, invent requirements, expose hidden reasoning, or propose solutions during reflection.
+- UI metadata now describes the reflection-first routing behavior.
+
+### Compatibility
+
+- The Skill name, installation path, `yiming-brainstorming` handoff, and per-request route boundary remain unchanged.
+- No new runtime dependency was added.
+
 ## 2026-08-07 — Brainstorming routing update
 
 ### Added

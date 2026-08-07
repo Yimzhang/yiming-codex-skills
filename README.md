@@ -6,7 +6,7 @@ Public personal collection of customized Codex Skills maintained by Yiming.
 
 | Skill | Purpose | Repository path |
 |---|---|---|
-| `brainstorming-gate` | Ask once whether a creative request should use or skip the full brainstorming workflow | `skills/brainstorming-gate` |
+| `brainstorming-gate` | Reflect the requested outcome, then route creative work to direct execution or full brainstorming | `skills/brainstorming-gate` |
 | `yiming-brainstorming` | Explore requirements and obtain explicit design approval after the user chooses brainstorming | `skills/yiming-brainstorming` |
 | `yiming-verification-before-completion` | Require fresh evidence before completion claims | `skills/yiming-verification-before-completion` |
 | `yiming-systematic-debugging` | Find root causes, check known environment gaps read-only, and record only confirmed recurrences | `skills/yiming-systematic-debugging` |
