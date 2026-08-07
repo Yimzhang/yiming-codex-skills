@@ -1,6 +1,6 @@
 ---
 name: yiming-systematic-debugging
-description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes. After confirming a reusable external limitation or workaround, MUST hand off to log-environment-gaps before completion.
+description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes. After stably reproducing an external capability failure, use log-environment-gaps for a read-only preflight lookup before proposing a new workaround. After confirming a reusable external limitation or workaround, MUST hand off to log-environment-gaps before completion.
 ---
 
 # Systematic Debugging
@@ -61,6 +61,8 @@ You MUST complete each phase before proceeding to the next.
    - Does it happen every time?
    - If not reproducible → gather more data, don't guess
 
+   **When the reproducible failure is external, perform the Environment Gap Preflight Lookup below before proposing or testing a new workaround.**
+
 3. **Check Recent Changes**
    - What changed that could cause this?
    - Git diff, recent commits
@@ -116,6 +118,26 @@ You MUST complete each phase before proceeding to the next.
    - What called this with bad value?
    - Keep tracing up until you find the source
    - Fix at source, not at symptom
+
+## Environment Gap Preflight Lookup
+
+After stably reproducing an external capability failure and before proposing or testing a new workaround, invoke `log-environment-gaps` in lookup mode.
+
+Treat a failure as external when the evidence points to a reusable limitation involving a package, runtime, tool, skill, connector, permission boundary, source, or platform. Do not perform lookup for quoting mistakes, invalid arguments, ordinary application-code defects, one-time missing inputs, clarification needs, or unreproduced transient failures.
+
+Pass this evidence to lookup mode:
+
+- affected component;
+- exact version when known;
+- root symptom;
+- stable error signature;
+- category candidate.
+
+Use exact matches before useful related matches. If lookup returns a prior workaround, treat it only as a hypothesis: revalidate it in the current environment before relying on it or reporting success. A `resolved` status describes the prior recorded case and does not prove that the current environment is already fixed.
+
+If lookup finds no match, state that explicitly and continue systematic debugging. If the lookup itself fails or the log cannot be read, disclose the lookup failure and continue debugging from the current evidence; do not let the knowledge-base lookup block root-cause investigation.
+
+Lookup is read-only. Do not update `last_seen`, increment `count`, improve evidence, change a workaround, or change status merely because a case was searched or matched.
 
 ### Phase 2: Pattern Analysis
 
@@ -212,7 +234,7 @@ This is NOT a failed hypothesis - this is a wrong architecture.
 
 ## Environment Gap Handoff
 
-After confirming the root cause and before completing the task, classify the result. A successful workaround does not remove this requirement.
+After confirming the root cause and before completing the task, classify the result. A successful workaround does not remove this requirement. Only a confirmed recurrence of the same root cause may enter `log-environment-gaps` update mode; a lookup match or no-match result by itself is not permission to update or append a gap.
 
 Invoke `log-environment-gaps` when any of these conditions is true:
 

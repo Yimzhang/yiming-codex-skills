@@ -1,4 +1,4 @@
 interface:
   display_name: "Environment Gap Log"
-  short_description: "Track persistent tool and environment gaps"
-  default_prompt: "Use $log-environment-gaps to record confirmed reusable environment or capability gaps while continuing the task with safe workarounds."
+  short_description: "Look up and record reusable environment gaps"
+  default_prompt: "Use $log-environment-gaps to look up known environment gaps read-only and record only confirmed reusable limitations or workarounds."

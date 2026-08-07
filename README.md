@@ -8,12 +8,12 @@ Public personal collection of customized Codex Skills maintained by Yiming.
 |---|---|---|
 | `yiming-brainstorming` | Explore requirements and approve a design before implementation | `skills/yiming-brainstorming` |
 | `yiming-verification-before-completion` | Require fresh evidence before completion claims | `skills/yiming-verification-before-completion` |
-| `yiming-systematic-debugging` | Find root causes before applying fixes and hand off reusable environment gaps | `skills/yiming-systematic-debugging` |
+| `yiming-systematic-debugging` | Find root causes, check known environment gaps read-only, and record only confirmed recurrences | `skills/yiming-systematic-debugging` |
 | `yiming-receiving-code-review` | Evaluate review feedback before implementing it | `skills/yiming-receiving-code-review` |
 | `yiming-writing-plans` | Turn approved specifications into implementation plans | `skills/yiming-writing-plans` |
 | `yiming-executing-plans` | Execute written plans with review checkpoints | `skills/yiming-executing-plans` |
 | `yiming-dispatching-parallel-agents` | Split independent work across parallel agents | `skills/yiming-dispatching-parallel-agents` |
-| `log-environment-gaps` | Record confirmed reusable environment and capability gaps | `skills/log-environment-gaps` |
+| `log-environment-gaps` | Look up known gaps read-only and record confirmed reusable environment limitations | `skills/log-environment-gaps` |
 
 ## Installation
 
@@ -34,6 +34,10 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 ```
 
 Restart Codex after installation so the new Skill metadata is reloaded.
+
+## Change History
+
+See [CHANGELOG.md](CHANGELOG.md) for published workflow changes.
 
 ## Validation
 
