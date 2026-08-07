@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorming Gate"
+  short_description: "Choose whether to brainstorm before creative work"
+  default_prompt: "Use $brainstorming-gate to decide whether this creative request should enter the full brainstorming workflow."

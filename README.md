@@ -6,7 +6,8 @@ Public personal collection of customized Codex Skills maintained by Yiming.
 
 | Skill | Purpose | Repository path |
 |---|---|---|
-| `yiming-brainstorming` | Explore requirements and approve a design before implementation | `skills/yiming-brainstorming` |
+| `brainstorming-gate` | Ask once whether a creative request should use or skip the full brainstorming workflow | `skills/brainstorming-gate` |
+| `yiming-brainstorming` | Explore requirements and obtain explicit design approval after the user chooses brainstorming | `skills/yiming-brainstorming` |
 | `yiming-verification-before-completion` | Require fresh evidence before completion claims | `skills/yiming-verification-before-completion` |
 | `yiming-systematic-debugging` | Find root causes, check known environment gaps read-only, and record only confirmed recurrences | `skills/yiming-systematic-debugging` |
 | `yiming-receiving-code-review` | Evaluate review feedback before implementing it | `skills/yiming-receiving-code-review` |
@@ -23,6 +24,7 @@ Install one or more Skill directories from GitHub:
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo Yimzhang/yiming-codex-skills `
   --path `
+    skills/brainstorming-gate `
     skills/yiming-brainstorming `
     skills/yiming-verification-before-completion `
     skills/yiming-systematic-debugging `
@@ -62,4 +64,4 @@ Each directory should return `Skill is valid!`.
 
 ## Attribution
 
-The seven `yiming-*` Skills were adapted from Superpowers 6.2.0 by Jesse Vincent and customized for Yiming's personal workflow. The upstream MIT License and copyright notice are preserved in [LICENSE](LICENSE). `log-environment-gaps` is Yiming's personal Skill.
+The seven `yiming-*` Skills were adapted from Superpowers 6.2.0 by Jesse Vincent and customized for Yiming's personal workflow. The upstream MIT License and copyright notice are preserved in [LICENSE](LICENSE). `brainstorming-gate` and `log-environment-gaps` are Yiming's personal Skills.

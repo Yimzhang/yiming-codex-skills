@@ -2,7 +2,25 @@
 
 This file records user-facing workflow changes to the published Skill collection.
 
-## 2026-08-07
+## 2026-08-07 — Brainstorming routing update
+
+### Added
+
+- Added `brainstorming-gate`, which routes each independent creative request according to the user's explicit choice to use or skip the full brainstorming workflow.
+- When no choice is present, the gate asks exactly once and does not perform brainstorming itself.
+
+### Changed
+
+- `yiming-brainstorming` now triggers only after the user explicitly chooses brainstorming or explicitly invokes the Skill.
+- The brainstorming workflow asks clarification questions one at a time and requires explicit user approval for design sections and the written specification.
+- The former standing-authorization path was removed from `yiming-brainstorming`; direct execution is handled by choosing to skip brainstorming at the routing gate.
+
+### Compatibility
+
+- The existing `yiming-brainstorming` name and installation path remain unchanged.
+- `brainstorming-gate` is additive and introduces no new runtime dependency.
+
+## 2026-08-07 — Environment gap lookup update
 
 ### Changed
 
