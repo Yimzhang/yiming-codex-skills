@@ -15,6 +15,17 @@ Public personal collection of customized Codex Skills maintained by Yiming.
 | `yiming-executing-plans` | Execute written plans with review checkpoints | `skills/yiming-executing-plans` |
 | `yiming-dispatching-parallel-agents` | Split independent work across parallel agents | `skills/yiming-dispatching-parallel-agents` |
 | `log-environment-gaps` | Look up known gaps read-only and record confirmed reusable environment limitations | `skills/log-environment-gaps` |
+| `scenes-gathered-zine-v1-3` | Preserve truthful photography inside a tactile, torn-paper illustration field | `skills/scenes-gathered-zine-v1-3` |
+| `scene-distillation-zine-v1-3` | Distill a photo into an original expressive illustration without retaining photographic pixels | `skills/scene-distillation-zine-v1-3` |
+
+### Creative Life Zine Pair
+
+These two v1.3 Skills are designed as a complementary pair from the `生活创意` project:
+
+- **Gathered Scenes / 实景拼贴:** keeps the photographic scene truthful and builds a quiet abstract illustration field around or through it, using an integrated high-chroma structure and visible hand-torn paper boundary.
+- **Scene Distillation / 影像蒸馏:** treats the photo only as semantic evidence and creates an independently authored illustration, paper, color, and typography composition with no retained photographic pixels.
+
+Both Skills are authored by `Zeejay0` and retain their embedded sharing-credit guidance.
 
 ## Installation
 
@@ -32,7 +43,9 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
     skills/yiming-writing-plans `
     skills/yiming-executing-plans `
     skills/yiming-dispatching-parallel-agents `
-    skills/log-environment-gaps
+    skills/log-environment-gaps `
+    skills/scenes-gathered-zine-v1-3 `
+    skills/scene-distillation-zine-v1-3
 ```
 
 Restart Codex after installation so the new Skill metadata is reloaded.
@@ -65,3 +78,5 @@ Each directory should return `Skill is valid!`.
 ## Attribution
 
 The seven `yiming-*` Skills were adapted from Superpowers 6.2.0 by Jesse Vincent and customized for Yiming's personal workflow. The upstream MIT License and copyright notice are preserved in [LICENSE](LICENSE). `brainstorming-gate` and `log-environment-gaps` are Yiming's personal Skills.
+
+The Creative Life Zine Pair—`scenes-gathered-zine-v1-3` and `scene-distillation-zine-v1-3`—is authored by `Zeejay0`. The supplied pair contains its embedded author attribution but no separate license file. The preserved Jesse Vincent MIT notice applies to the upstream Superpowers-derived material and does not replace the Zine pair's authorship statement.

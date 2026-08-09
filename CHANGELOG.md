@@ -2,6 +2,21 @@
 
 This file records user-facing workflow changes to the published Skill collection.
 
+## 2026-08-09 — Creative Life Zine Pair v1.3
+
+### Added
+
+- Added `scenes-gathered-zine-v1-3` and `scene-distillation-zine-v1-3` together as the Creative Life Zine Pair, authored by `Zeejay0`.
+- **Gathered Scenes / 实景拼贴** preserves truthful photography while extending source-derived forms into a spacious tactile illustration field with structural color and a visible fibrous torn-paper handoff.
+- **Scene Distillation / 影像蒸馏** uses the supplied photo only as semantic evidence and creates original illustration, paper, typography, and color without retaining photographic pixels.
+
+### Packaging and attribution
+
+- Published exactly four runtime files: one `SKILL.md` and one `agents/openai.yaml` for each Skill.
+- Published no source photographs, generated images, binary assets, project history, or other `生活创意` files.
+- Preserved the embedded `Zeejay0` author and sharing-credit statements.
+- The pair includes no separate license file; the repository's preserved Jesse Vincent MIT notice is retained for upstream Superpowers-derived material and does not replace the pair's authorship statement.
+
 ## 2026-08-07 — Brainstorming gate reflection update
 
 ### Changed
